@@ -34,8 +34,15 @@ boolean sacar (double valor){
         return true;
     }
 }
-void transferirPara(Conta c1,double valor){
-    if (this.sacar(valor));
+boolean transferirPara(Conta x,double valor){
+    if (this.sacar(valor)){
+        x.depositar(valor);
+        System.out.println("Transferencia realizada");
+        return true;
+    }
+    else
+        System.out.println("Transferencia Não realizada");
+    return false;
     
 }
 
