@@ -1,24 +1,43 @@
-
 package aula03;
 
 
 public class Conta {
-    int numero;
-    String cpf;
-    float saldo;
-    double titular;
+    private int numero;
+    private double saldo;
+    private Cliente titular;
       
 void visualizarSaldo (){
     System.out.println("Saldo = " + this.saldo);
 }
-void depositar(){
+boolean depositar(double valor){
+    if(valor>0){
+        this.saldo = this.saldo + valor;
+        return true;
+    }else 
+        return false;
+    }
     
+   void visualizarConta(){
+       System.out.println("Nome do titular = " +this.titular.nome);
+       System.out.println("sobrenome = "+this.titular.sobrenome );
+       System.out.println("cpf = " + this.titular.cpf);
+       System.out.println("saldo =" + this.saldo);
 }
-void sacar (){
-    
+boolean sacar (double valor){
+    if (valor >this.saldo|| valor<= 0){
+       
+        return false;
+       
+   }
+    else{
+         this.saldo = this.saldo - valor;
+        return true;
+    }
 }
-void transferirDinheiro(){
+void transferirPara(Conta c1,double valor){
+    if (this.sacar(valor));
     
 }
 
 }
+
