@@ -1,17 +1,23 @@
 
-
 package aula03;
 
 
 public class Cliente {
   
-      String nome;
-      String sobrenome;
-      String cpf;
+      private String nome;
+      private String sobrenome;
+      private String cpf;
        
     
-    void visualizarConta (){
-        System.out.println("Cliente = " + this.nome + this.sobrenome);
-        System.out.println("Cpf = " + this.cpf);
+      public Cliente (String nome,String cpf,String sobrenome){
+          this.cpf = cpf;
+          this.sobrenome = sobrenome;
+          this.nome = nome;
+      }
+      
+     void visualizarConta(){
+       System.out.println("Nome do titular = " +this.nome);
+       System.out.println("sobrenome = "+this.sobrenome );
+       System.out.println("cpf = " + this.cpf);
 }
 }
